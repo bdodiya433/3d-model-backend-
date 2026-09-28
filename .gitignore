@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.env
+
+# Project Folders (Ignore content, keep directories)
+uploads/*
+!uploads/.gitkeep
+outputs/*
+!outputs/.gitkeep
+temp/*
+!temp/.gitkeep
+weights/*
+!weights/.gitkeep
+logs/*
+!logs/.gitkeep
+
+# IDEs & System files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store

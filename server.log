@@ -1,0 +1,73 @@
+INFO:     Started server process [70911]
+INFO:     Waiting for application startup.
+2026-07-31 19:10:38,578 [INFO] [-] app.lifecycle:90 - Successfully booted Image-to-3D AI Backend in DEBUG mode.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-07-31 19:10:46,624 [INFO] [958aa4a2-2a17-4859-a1ea-fc544f509464] app.middleware.request_context:39 - Request completed: GET /version - Status: 200 - Duration: 0.0030s
+INFO:     172.168.17.157:50137 - "GET /version HTTP/1.1" 200 OK
+2026-07-31 19:10:52,177 [WARNING] [883e25c1-1332-4cd2-b1a1-1cde5e836042] app.api.exception_handlers:48 - Request validation failure on path /upload-multi - errors: [{'field': 'files', 'type': 'missing', 'message': 'Field required'}]
+2026-07-31 19:10:52,177 [INFO] [883e25c1-1332-4cd2-b1a1-1cde5e836042] app.middleware.request_context:39 - Request completed: POST /upload-multi - Status: 422 - Duration: 0.0045s
+INFO:     172.168.17.157:50148 - "POST /upload-multi HTTP/1.1" 422 Unprocessable Entity
+2026-07-31 19:10:56,690 [INFO] [4193b4bd-8d1d-4182-841a-e933bbaf3f6b] app.generation:105 - Successfully uploaded 6 multi-view image(s).
+2026-07-31 19:10:56,691 [INFO] [4193b4bd-8d1d-4182-841a-e933bbaf3f6b] app.middleware.request_context:39 - Request completed: POST /upload-multi - Status: 200 - Duration: 0.1265s
+INFO:     172.168.17.13:45732 - "POST /upload-multi HTTP/1.1" 200 OK
+2026-07-31 19:10:56,731 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.jobs:51 - Job 99f9257b-7a63-4f9c-994e-af8f0f82a89f created for 6 image(s) using hunyuan3d.
+2026-07-31 19:10:56,732 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.middleware.request_context:39 - Request completed: POST /generate - Status: 200 - Duration: 0.0065s
+INFO:     172.168.17.13:45732 - "POST /generate HTTP/1.1" 200 OK
+2026-07-31 19:10:56,735 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.jobs:161 - Preprocessing view image 1/6 (ID: 16df477a-1c5d-4c19-9199-63827487f4d6) from uploads/16df477a-1c5d-4c19-9199-63827487f4d6.png...
+2026-07-31 19:10:56,749 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:264 - Input image is opaque/has no transparency. Running U2-Net Lite segmentation...
+INFO:     172.168.17.13:45748 - "WebSocket /progress/99f9257b-7a63-4f9c-994e-af8f0f82a89f" [accepted]
+INFO:     connection open
+2026-07-31 19:10:56,809 [INFO] [-] app.generation:201 - WebSocket client connected for progress updates on job: 99f9257b-7a63-4f9c-994e-af8f0f82a89f
+2026-07-31 19:10:57,368 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:43 - Initializing rembg session with model 'u2netp'...
+2026-07-31 19:10:57,425 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:131 - Executing U2-Net Lite background removal...
+2026-07-31 19:10:57,717 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:290 - Successfully preprocessed image into centered 512x512 square canvas.
+2026-07-31 19:10:57,729 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.jobs:161 - Preprocessing view image 2/6 (ID: 6b48c180-3c9a-439b-85e9-797a4eb8d3a1) from uploads/6b48c180-3c9a-439b-85e9-797a4eb8d3a1.png...
+2026-07-31 19:10:57,732 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:264 - Input image is opaque/has no transparency. Running U2-Net Lite segmentation...
+2026-07-31 19:10:57,732 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:131 - Executing U2-Net Lite background removal...
+2026-07-31 19:10:58,018 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:290 - Successfully preprocessed image into centered 512x512 square canvas.
+2026-07-31 19:10:58,022 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.jobs:161 - Preprocessing view image 3/6 (ID: 8d5433c9-4b5e-45aa-b8d5-fce85431337f) from uploads/8d5433c9-4b5e-45aa-b8d5-fce85431337f.png...
+2026-07-31 19:10:58,025 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:264 - Input image is opaque/has no transparency. Running U2-Net Lite segmentation...
+2026-07-31 19:10:58,025 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:131 - Executing U2-Net Lite background removal...
+2026-07-31 19:10:58,294 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:290 - Successfully preprocessed image into centered 512x512 square canvas.
+2026-07-31 19:10:58,299 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.jobs:161 - Preprocessing view image 4/6 (ID: 30d9307b-b2a0-43a3-a0e8-7767a5aef8f2) from uploads/30d9307b-b2a0-43a3-a0e8-7767a5aef8f2.png...
+2026-07-31 19:10:58,301 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:264 - Input image is opaque/has no transparency. Running U2-Net Lite segmentation...
+2026-07-31 19:10:58,302 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:131 - Executing U2-Net Lite background removal...
+2026-07-31 19:10:58,559 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:290 - Successfully preprocessed image into centered 512x512 square canvas.
+2026-07-31 19:10:58,563 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.jobs:161 - Preprocessing view image 5/6 (ID: 131ab19f-f57c-4835-97d1-fd82fa22c094) from uploads/131ab19f-f57c-4835-97d1-fd82fa22c094.png...
+2026-07-31 19:10:58,565 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:264 - Input image is opaque/has no transparency. Running U2-Net Lite segmentation...
+2026-07-31 19:10:58,565 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:131 - Executing U2-Net Lite background removal...
+2026-07-31 19:10:58,839 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:290 - Successfully preprocessed image into centered 512x512 square canvas.
+2026-07-31 19:10:58,845 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.jobs:161 - Preprocessing view image 6/6 (ID: d44dc72d-b0b2-4cd6-9d58-35664573370b) from uploads/d44dc72d-b0b2-4cd6-9d58-35664573370b.png...
+2026-07-31 19:10:58,847 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:264 - Input image is opaque/has no transparency. Running U2-Net Lite segmentation...
+2026-07-31 19:10:58,848 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:131 - Executing U2-Net Lite background removal...
+2026-07-31 19:10:59,079 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.image.preprocessor:290 - Successfully preprocessed image into centered 512x512 square canvas.
+2026-07-31 19:10:59,094 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.ai.hunyuan.loader:45 - Loading Hunyuan3D-2 model on device=mps, dtype=torch.float16...
+2026-07-31 19:10:59,096 - hy3dgen.shapgen - INFO - Loading model from weights/hunyuan3d/model.fp16.safetensors
+2026-07-31 19:10:59,096 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] hy3dgen.shapgen:159 - Loading model from weights/hunyuan3d/model.fp16.safetensors
+2026-07-31 19:11:33,204 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.ai.hunyuan.loader:61 - Successfully loaded Hunyuan3D-2 pipeline.
+2026-07-31 19:11:33,210 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.ai.hunyuan.predictor:29 - Executing Hunyuan3D-2 forward pass...
+PointCrossAttentionEncoder INFO: pc_sharpedge_size is given, using pc_size=5120, pc_sharpedge_size=5120
+Diffusion Sampling::   0%|          | 0/20 [00:00<?, ?it/s]Diffusion Sampling::   5%|▌         | 1/20 [00:03<01:08,  3.59s/it]Diffusion Sampling::  15%|█▌        | 3/20 [00:07<00:38,  2.26s/it]Diffusion Sampling::  20%|██        | 4/20 [00:10<00:43,  2.72s/it]Diffusion Sampling::  25%|██▌       | 5/20 [00:14<00:44,  3.00s/it]Diffusion Sampling::  30%|███       | 6/20 [00:17<00:44,  3.18s/it]Diffusion Sampling::  35%|███▌      | 7/20 [00:21<00:43,  3.31s/it]Diffusion Sampling::  40%|████      | 8/20 [00:25<00:40,  3.39s/it]Diffusion Sampling::  45%|████▌     | 9/20 [00:28<00:37,  3.45s/it]Diffusion Sampling::  50%|█████     | 10/20 [00:32<00:34,  3.49s/it]Diffusion Sampling::  55%|█████▌    | 11/20 [00:35<00:31,  3.51s/it]Diffusion Sampling::  60%|██████    | 12/20 [00:39<00:28,  3.53s/it]Diffusion Sampling::  65%|██████▌   | 13/20 [00:42<00:24,  3.54s/it]Diffusion Sampling::  70%|███████   | 14/20 [00:46<00:21,  3.55s/it]Diffusion Sampling::  75%|███████▌  | 15/20 [00:50<00:17,  3.56s/it]Diffusion Sampling::  80%|████████  | 16/20 [00:53<00:14,  3.56s/it]Diffusion Sampling::  85%|████████▌ | 17/20 [00:57<00:10,  3.57s/it]Diffusion Sampling::  90%|█████████ | 18/20 [01:00<00:07,  3.57s/it]Diffusion Sampling::  95%|█████████▌| 19/20 [01:04<00:03,  3.57s/it]Diffusion Sampling:: 100%|██████████| 20/20 [01:07<00:00,  3.58s/it]Diffusion Sampling:: 100%|██████████| 20/20 [01:07<00:00,  3.40s/it]
+Volume Decoding:   0%|          | 0/7134 [00:00<?, ?it/s]Volume Decoding:   5%|▍         | 333/7134 [00:00<00:02, 3324.88it/s]Volume Decoding:  10%|▉         | 685/7134 [00:00<00:01, 3436.19it/s]Volume Decoding:  14%|█▍        | 1032/7134 [00:00<00:01, 3450.97it/s]Volume Decoding:  19%|█▉        | 1387/7134 [00:00<00:01, 3488.10it/s]Volume Decoding:  24%|██▍       | 1736/7134 [00:00<00:01, 3445.30it/s]Volume Decoding:  29%|██▉       | 2086/7134 [00:00<00:01, 3461.31it/s]Volume Decoding:  34%|███▍      | 2433/7134 [00:00<00:01, 3455.41it/s]Volume Decoding:  39%|███▉      | 2779/7134 [00:00<00:01, 3449.33it/s]Volume Decoding:  44%|████▍     | 3124/7134 [00:00<00:01, 3395.60it/s]Volume Decoding:  49%|████▊     | 3464/7134 [00:01<00:01, 3296.95it/s]Volume Decoding:  53%|█████▎    | 3795/7134 [00:01<00:01, 3286.76it/s]Volume Decoding:  58%|█████▊    | 4125/7134 [00:01<00:00, 3264.39it/s]Volume Decoding:  62%|██████▏   | 4454/7134 [00:01<00:00, 3270.72it/s]Volume Decoding:  67%|██████▋   | 4782/7134 [00:01<00:00, 3254.41it/s]Volume Decoding:  72%|███████▏  | 5108/7134 [00:01<00:00, 3227.58it/s]Volume Decoding:  76%|███████▌  | 5431/7134 [00:01<00:00, 3210.51it/s]Volume Decoding:  81%|████████  | 5753/7134 [00:01<00:00, 3194.89it/s]Volume Decoding:  85%|████████▌ | 6089/7134 [00:01<00:00, 3243.42it/s]Volume Decoding:  90%|████████▉ | 6414/7134 [00:01<00:00, 3234.98it/s]Volume Decoding:  94%|█████████▍| 6738/7134 [00:02<00:00, 3122.68it/s]Volume Decoding:  99%|█████████▉| 7052/7134 [00:02<00:00, 3054.32it/s]Volume Decoding: 100%|██████████| 7134/7134 [00:02<00:00, 3261.38it/s]
+2026-07-31 19:23:55,562 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.ai.hunyuan.exporter:17 - Exporting generated mesh to: outputs/99f9257b-7a63-4f9c-994e-af8f0f82a89f.glb (Format: glb)
+2026-07-31 19:23:55,593 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.ai.hunyuan.exporter:30 - Mesh successfully written to disk: 99f9257b-7a63-4f9c-994e-af8f0f82a89f.glb
+2026-07-31 19:23:55,595 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.blender.exporter:40 - Converting GLB asset '99f9257b-7a63-4f9c-994e-af8f0f82a89f.glb' to Blender project file '.blend'...
+2026-07-31 19:23:55,596 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.blender.exporter:131 - Executing Blender CLI: /Applications/Blender.app/Contents/MacOS/Blender --background --python outputs/convert_99f9257b-7a63-4f9c-994e-af8f0f82a89f.py -- outputs/99f9257b-7a63-4f9c-994e-af8f0f82a89f.glb outputs/99f9257b-7a63-4f9c-994e-af8f0f82a89f.blend
+2026-07-31 19:24:01,369 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.services.blender.exporter:141 - Successfully generated Blender project file: outputs/99f9257b-7a63-4f9c-994e-af8f0f82a89f.blend
+2026-07-31 19:24:01,370 [INFO] [af141c58-4b7b-44e7-8bd1-14d22b8b3ec7] app.jobs:232 - Job 99f9257b-7a63-4f9c-994e-af8f0f82a89f successfully completed. Both GLB and .blend exported.
+2026-07-31 19:24:01,405 [INFO] [-] app.generation:234 - WebSocket stream closed for job: 99f9257b-7a63-4f9c-994e-af8f0f82a89f
+2026-07-31 19:24:01,710 [INFO] [83c22f85-5f91-4dc4-af2e-8b19c4bc4373] app.middleware.request_context:39 - Request completed: GET /download/99f9257b-7a63-4f9c-994e-af8f0f82a89f - Status: 200 - Duration: 0.0280s
+INFO:     172.168.17.13:39522 - "GET /download/99f9257b-7a63-4f9c-994e-af8f0f82a89f?format=glb HTTP/1.1" 200 OK
+2026-07-31 19:25:00,570 [INFO] [2a58e80b-4bb5-4d4f-9503-6681921baa7d] app.middleware.request_context:39 - Request completed: GET /download/99f9257b-7a63-4f9c-994e-af8f0f82a89f - Status: 200 - Duration: 0.0265s
+INFO:     172.168.17.13:41880 - "GET /download/99f9257b-7a63-4f9c-994e-af8f0f82a89f?format=blend HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2026-07-31 19:35:16,356 [INFO] [-] app.lifecycle:97 - Starting shutdown sequence for Image-to-3D AI Backend.
+2026-07-31 19:35:16,359 [INFO] [-] app.ai.manager:61 - ModelManager: requesting unload for 'hunyuan3d'...
+2026-07-31 19:35:16,361 [INFO] [-] app.ai.hunyuan.loader:72 - Unloading Hunyuan3D-2 pipeline...
+2026-07-31 19:35:17,406 [INFO] [-] app.ai.hunyuan.loader:88 - Hunyuan3D-2 pipeline unloaded from active memory.
+2026-07-31 19:35:17,454 [INFO] [-] app.ai.manager:65 - ModelManager: 'hunyuan3d' successfully unloaded.
+2026-07-31 19:35:17,457 [INFO] [-] app.lifecycle:104 - Shutdown sequence completed.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [70911]
